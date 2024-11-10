@@ -17,4 +17,19 @@ export default {
         },
     },
     plugins: [],
+
+
+
+    theme: {
+        extend: {
+            colors: {
+                'custom-coklat': '#cdb77f',
+            },
+        },
+    },
+    extend: {
+        fontFamily: {
+            abeezee: ['ABeeZee', 'sans-serif'],
+        },
+    },
 };

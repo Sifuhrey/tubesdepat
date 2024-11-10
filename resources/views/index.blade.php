@@ -13,13 +13,13 @@
     <img id="logo" src="{{ asset('assets/Artboard 1.png') }}" alt="Logo" class="h-10 cursor-pointer" onclick="location.href = '{{ url('/') }}';">
     <div class="flex items-center space-x-2">
       <input type="text" placeholder="Search product" id="general-search" class="border rounded px-4 py-2" />
-      <button onclick="location.href = '{{ url('signup') }}'" class="bg-neutral-400 text-white px-4 py-2 rounded">
+      <button onclick="location.href = '{{ url('regis') }}'" class="bg-neutral-400 text-white px-4 py-2 rounded">
         <img src="{{ asset('assets/search-interface-symbol.png') }}" alt="Search">
       </button>
     </div>
     <div class="space-x-4">
-      <a href="{{ url('signup') }}" class="border rounded-xl px-4 py-2 border-none shadow-xl bg-neutral-400 ">Daftar</a>
-      <a href="{{ url('signin') }}" class="border rounded-xl px-4 py-2 border-none shadow-xl bg-neutral-400 ">Masuk</a>
+      <a href="{{ url('regis') }}" class="border rounded-xl px-4 py-2 border-none shadow-xl bg-neutral-400 ">Daftar</a>
+      <a href="{{ url('login') }}" class="border rounded-xl px-4 py-2 border-none shadow-xl bg-neutral-400 ">Masuk</a>
     </div>
   </header>
 
@@ -35,7 +35,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
           @foreach($products as $product)
             <div class="product bg-white p-4 rounded shadow-md">
-              <img src="{{ asset('web/' . $product->imgname) }}" alt="{{ $product->productname }}" class="w-full h-48 object-cover">
+              <img src="{{ asset('storage/'.$product->imgname) }}" alt="{{ $product->productname }}" class="w-full h-48 object-cover">
               <div class="product-desc mt-2">
                 <p class="font-bold">{{ $product->productname }}</p>
                 <p>Rp.{{ number_format($product->price, 2, ",", ".") }} /pcs</p>
@@ -54,7 +54,7 @@
         <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
           @foreach(['putih','merah','hitam','ketan','aromatik'] as $category)
             <div class="product-categories text-center bg-white p-4 rounded shadow-md">
-              <img src="{{ asset('assets/' . $category . '.jpg') }}" alt="{{ ucfirst($category) }}" class="categori-img w-full h-32 object-cover cursor-pointer" onclick="location.href = '{{ url('signup') }}'">
+              <img src="{{ asset('assets/' . $category . '.jpg') }}" alt="{{ ucfirst($category) }}" class="categori-img w-full h-32 object-cover cursor-pointer" onclick="location.href = '{{ url('regis') }}'">
               <p class="category-desc mt-2">Beras {{ ucfirst($category) }}</p>
             </div>
           @endforeach

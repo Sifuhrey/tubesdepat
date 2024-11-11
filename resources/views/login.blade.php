@@ -13,7 +13,7 @@
 
 
     <!-- Logo Header -->
-    <main class="flex flex-col md:flex-row gap-96 items-left justify-left md:space-x-1 space-y-30 md:space-y-0">
+    <main class="flex flex-col md:flex-row gap-32 items-left justify-left md:space-x-1 space-y-30 md:space-y-0">
         
         <!-- Left Section - Information -->
         <div class="text-center md:text-left space-y-4">
@@ -21,12 +21,12 @@
             <h2 class="text-xl text-gray-600">Oryva Marketplace</h2>
             <p class="text-sm text-gray-500">Jika anda tidak mempunyai akun</p>
             <p id="register" class="text-green-500">
-                <a href="{{ url('signup') }}">Register Here!</a>
+                <a href="{{ url('regis') }}">Register Here!</a>
             </p>
-            <div class="mt-8">
-                <img src="{{ asset('assets/Maskot.png') }}" alt="maskot" class="w-20 mx-auto md:mx-0">
-            </div>
-        </div>
+          </div>
+          <div class="">
+              <img src="{{ asset('storage/assets/Maskot.png') }}" alt="maskot" class="w-72 mx-auto md:mx-0">
+          </div>
 
         <!-- Right Section - Form -->
         <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
@@ -53,7 +53,7 @@
 
     </main>
 
-    <script src="{{ asset('script/signin.js') }}"></script>
+    <script src="{{ asset('js/signin.js') }}"></script>
 </body>
 </head>
 

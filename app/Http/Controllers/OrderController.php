@@ -18,6 +18,6 @@ class OrderController extends Controller
                         ->where('id_user', $userId)
                         ->get();
 
-        return view('orders.index', compact('orders'));
+        return view('orders', compact('orders'));
     }
 }

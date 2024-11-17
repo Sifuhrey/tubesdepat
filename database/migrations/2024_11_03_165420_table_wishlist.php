@@ -19,7 +19,7 @@ return new class extends Migration
         // Foreign key constraints
         $table->foreign('id_user')
               ->references('id_user')
-              ->on('user')
+              ->on('users')
               ->onDelete('set null')
               ->onUpdate('cascade');
 

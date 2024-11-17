@@ -31,7 +31,7 @@
         <!-- Right Section - Form -->
         <div class="bg-white shadow-lg rounded-lg p-8 w-full max-w-md">
             <p class="text-xl font-medium mb-6 text-center">Sign in</p>
-            <form action="{{ htmlspecialchars($_SERVER['PHP_SELF']) }}" method="post" class="space-y-4">
+            <form action="{{ route('login.store') }}" method="post" class="space-y-4">
                 @csrf
                 <div>
                     <input type="text" name="email" placeholder="Enter email or username" required

@@ -9,6 +9,9 @@ class Order extends Model
 {
     use HasFactory;
 
+    protected $table = 'pesanan';
+    protected $primaryKey = 'id_pesanan';
+
     public function product()
     {
         return $this->belongsTo(Product::class, 'id_produk');

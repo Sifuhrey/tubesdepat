@@ -9,8 +9,6 @@ class UserController extends Controller
     public function regis(){
       return view('register');
     }
-    public function index()
-    {
 
         return view(
             'login'

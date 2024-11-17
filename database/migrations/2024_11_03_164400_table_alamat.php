@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+      Schema::dropIfExists('alamat');
       Schema::create('alamat', function (Blueprint $table) {
         $table->id('id_alamat');
         $table->string('label', 20);
@@ -23,7 +24,7 @@ return new class extends Migration
         // Foreign key constraint
         $table->foreign('id_user')
               ->references('id_user')
-              ->on('user')
+              ->on('users')
               ->onDelete('cascade')
               ->onUpdate('cascade');
     });

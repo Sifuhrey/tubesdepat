@@ -13,7 +13,7 @@ class User extends Authenticatable implements MustVerifyEmail
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
-    protected $table = 'user';
+    protected $table = 'users';
   
     protected $primaryKey = 'id_user';
     /**

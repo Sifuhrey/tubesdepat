@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+      Schema::dropIfExists('transaksi');
       Schema::create('transaksi', function (Blueprint $table) {
         $table->id('id_transaksi');
         $table->unsignedBigInteger('id_user');
@@ -22,7 +23,7 @@ return new class extends Migration
         // Foreign key constraint
         $table->foreign('id_user')
               ->references('id_user')
-              ->on('user')
+              ->on('users')
               ->onDelete('cascade')
               ->onUpdate('cascade');
     });

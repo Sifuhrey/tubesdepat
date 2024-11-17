@@ -11,6 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
+      Schema::dropIfExists('wishlist');
       Schema::create('wishlist', function (Blueprint $table) {
         $table->id('id_wishlist');
         $table->unsignedBigInteger('id_user')->nullable();
@@ -19,7 +20,7 @@ return new class extends Migration
         // Foreign key constraints
         $table->foreign('id_user')
               ->references('id_user')
-              ->on('user')
+              ->on('users')
               ->onDelete('set null')
               ->onUpdate('cascade');
 

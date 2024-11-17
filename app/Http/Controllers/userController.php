@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class UserController extends Controller
+class userController extends Controller
 {
     public function regis(){
       return view('register');
     }
+    public function index()
+    {
 
         return view(
             'login'

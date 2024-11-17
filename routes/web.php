@@ -9,5 +9,5 @@ Route::get('/', [ProductController::class, 'index'])->name('product.index');
 Route::post('/', [ProductController::class, 'store'])->name('product.store');
 Route::get('/login', [UserController::class, 'login'])->name('login');
 Route::get('/regis', [UserController::class, 'regis']);
-Route::post('/regis', [UserController::class, 'store'])->name('store');
+Route::post('/regis', [UserController::class, 'store'])->name('user.store');
 

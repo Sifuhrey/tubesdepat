@@ -11,7 +11,7 @@
      
     <main class="flex flex-col items-center justify-center py-16">
         <h1 class="text-4xl font-medium mb-8">Sign Up</h1>
-        <form action="{{ route('store') }}" method="POST" id="signupform" class="flex flex-col items-center gap-6">
+        <form action="{{ route('user.store') }}" method="POST" id="signupform" class="flex flex-col items-center gap-6">
             @csrf
             <div class="w-96 relative">
                 <input type="email" name="email" placeholder="Email (example: email@oryva.com)" required
@@ -28,7 +28,7 @@
                 <input type="checkbox" id="triggerpass" class="hidden">
             </div>
             <div class="w-96 relative">
-                <input type="password" id="confirmPassword" placeholder="Konfirmasi Password" required
+                <input type="password" id="password_confirmation" placeholder="Konfirmasi Password" required
                     class="w-full h-14 bg-yellow-50 rounded-md px-6 shadow-md border-none focus:outline-none focus:ring-2 focus:ring-yellow-300">
                 <img src="{{ asset('storage/assets/invisible.png') }}" alt="" id="confirmicon" class="absolute right-4 w-4 top-4 cursor-pointer">
                 <input type="checkbox" id="triggerconfirm" class="hidden">

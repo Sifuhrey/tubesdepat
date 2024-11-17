@@ -1,5 +1,5 @@
 const passwordInput = document.getElementById('password');
-const confirmPasswordInput = document.getElementById('confirmPassword');
+const confirmPasswordInput = document.getElementById('password_confirmation');
 const mismatchIcon = document.getElementById('exclamation')
 const showConfirm = document.getElementById('triggerconfirm')
 const showPass = document.getElementById('triggerpass')

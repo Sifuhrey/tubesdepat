@@ -10,10 +10,10 @@
 
 <body class="bg-gray-100 font-sans">
   <!-- Header -->
-  <header class="bg-yellow-400 p-6 flex items-center justify-between">
-    <img id="logo" src="{{ asset('assets/Artboard 1.png') }}" alt="Logo" class="h-12">
+  <header class="bg-[#cdb77f] p-6 flex items-center justify-between">
+  <img src="{{ asset('storage/assets/Artboard 1.png') }}" alt="Logo" class="ml-4 h-16 cursor-pointer transition-transform transform hover:scale-110" onclick="location.href = '{{ route('user.index') }}';">
     <p class="text-black font-semibold">
-    @php
+              @php
                 date_default_timezone_set("Asia/Jakarta");
                 $hour = date('H');
                 if ($hour >= 5 && $hour <= 11) $greet = "Selamat Pagi, ";
@@ -30,14 +30,13 @@
     <h1 class="text-2xl font-bold mb-6 text-center">Registrasi Produk</h1>
 
     <!-- Form -->
-    <form action="{{route('product.store', $product->id_produk) }}" method="POST" enctype="multipart/form-data" class="space-y-6">
+    <form action="{{route('product.store') }}" method="POST" enctype="multipart/form-data" class="space-y-6">
     @csrf
-    @method('POST')
 
       <!-- Product Name -->
       <div>
         <label for="productname" class="block text-gray-700 font-medium">Nama Produk</label>
-        <input type="text" id="productname" name="productname" 
+        <input type="text" id="productname" name="productname"
                class="w-full p-3 border rounded-lg focus:outline-none focus:ring focus:ring-yellow-300"
                placeholder="Masukkan nama produk" required>
       </div>
@@ -45,7 +44,7 @@
       <!-- Product Category -->
       <div>
         <label for="jenis_beras" class="block text-gray-700 font-medium">Kategori Produk</label>
-        <select id="jenis_beras" name="jenis_beras" 
+        <select id="jenis_beras" name="category"
                 class="w-full p-3 border rounded-lg focus:outline-none focus:ring focus:ring-yellow-300"
                 required>
           <option value="null" disabled selected>Pilih Kategori</option>
@@ -68,23 +67,23 @@
       <!-- Product Stock -->
       <div>
         <label for="stock" class="block text-gray-700 font-medium">Stok</label>
-        <input type="number" id="stock" name="stock" 
+        <input type="number" id="stock" name="stock"
                class="w-full p-3 border rounded-lg focus:outline-none focus:ring focus:ring-yellow-300"
                placeholder="Masukkan stok produk" required>
       </div>
 
       <!-- Product Description -->
       <div>
-        <label for="desc" class="block text-gray-700 font-medium">Deskripsi Produk</label>
-        <textarea id="desc" name="desc" rows="4"
+        <label for="description" class="block text-gray-700 font-medium">Deskripsi Produk</label>
+        <textarea id="desc" name="description" rows="4"
                   class="w-full p-3 border rounded-lg focus:outline-none focus:ring focus:ring-yellow-300"
                   placeholder="Masukkan deskripsi produk" required></textarea>
       </div>
 
       <!-- Product Image -->
       <div>
-        <label for="gambar" class="block text-gray-700 font-medium">Gambar Produk</label>
-        <input type="file" id="gambar" name="gambar" accept="image/*"
+        <label for="imgname" class="block text-gray-700 font-medium">Gambar Produk</label>
+       <input type="file" id="gambar" name="imgname" accept="image/*"
                class="w-full p-3 border rounded-lg focus:outline-none focus:ring focus:ring-yellow-300" 
                required>
       </div>
@@ -92,7 +91,7 @@
       <!-- Submit Button -->
       <div class="text-center">
         <button type="submit" 
-                class="px-6 py-3 bg-yellow-500 text-white rounded-lg hover:bg-yellow-600">
+                class="px-6 py-3 bg-[#cdb77f] text-white rounded-lg hover:bg-yellow-600">
           Daftar Produk
         </button>
       </div>

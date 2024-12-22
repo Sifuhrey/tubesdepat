@@ -22,7 +22,7 @@ class ProductController extends Controller
     public function create()
     {
     return view('registerproduct');
-    }
+}
     public function category($namaproduk)
     {
         $products = Product::where('category', $namaproduk)->get();

@@ -6,6 +6,7 @@ use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\userController;
 use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ShipmentController;
 use App\Http\Controllers\WishlistController;
 use App\Models\Address;
 
@@ -15,6 +16,7 @@ Route::get('/login', [userController::class, 'login'])->name('login');
 Route::post('/login/process', [userController::class, 'processlogin'])->name('login.store');
 Route::get('/regis', [userController::class, 'regis']);
 Route::post('/regis/submit', [userController::class, 'store'])->name('user.store');
+
 
 Route::middleware(['check'])->group(function () {
     Route::get('/orders', [OrderController::class, 'index'])->name('orders.index');
@@ -48,11 +50,15 @@ Route::middleware(['check'])->group(function () {
 Route::middleware(['checkAdmin'])->group(function () {
     Route::get('/mainAdmin',[ProductController::class,'admin'])->name('admin.main');
     Route::post('/logout', [userController::class, 'logout'])->name('logout');
-    Route::get('/product/register', [ProductController::class, 'create'])->name('productregister');
-    Route::post('/product/create', [ProductController::class, 'store'])->name('product.store');
+    Route::get('/registerproduct', [ProductController::class, 'create'])->name('product.create');
+    Route::post('/registerproduct', [ProductController::class, 'store'])->name('product.store');
+
     // Route::put('/product/store', [ProductController::class, 'store'])->name('product.store');
     Route::get('/product/edit/{id}', [ProductController::class, 'tampilanedit'])->name('product.edit');
     Route::put('/product/update/{id}', [ProductController::class, 'update'])->name('product.update');
     Route::delete('/product/delete/{id}',[ProductController::class,'destroy'])->name('product.destroy');
+    
+    Route::get('/datapengiriman', [ShipmentController::class, 'index'])->name('datapengiriman');
+    Route::put('/buktibayar/{id}/status', [ShipmentController::class, 'changeStatus'])->name('changestatus');
 
 });

@@ -22,10 +22,10 @@
             {{ $greet . auth()->user()->username }}
         </p>
         <div class="ml-auto flex gap-4">
-            <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center shadow-md cursor-pointer hover:scale-110 transition" onclick="window.location='{{ route('admin.main') }}'">
-                <img src="{{ asset('storage/assets/shipment.png') }}" alt="Pengiriman">
+            <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center shadow-md cursor-pointer hover:scale-110 transition" onclick="window.location='{{ route('datapengiriman') }}'">
+                <img src="{{ asset('storage/assets/shipment.png') }}" alt="pengiriman">
             </div>
-            <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center shadow-md cursor-pointer hover:scale-110 transition" onclick="window.location='{{ route('admin.main') }}'">
+            <div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center shadow-md cursor-pointer hover:scale-110 transition" onclick="window.location='{{ route('datapengiriman') }}'">
                 <img src="{{ asset('storage/assets/payment.png') }}" alt="Pembayaran">
             </div>
             <form method="POST" action="{{ route('logout') }}">
@@ -37,11 +37,11 @@
 
     <main class="flex flex-col items-center py-8">
         <h1 class="text-2xl font-bold mb-6">Daftar Produk</h1>
-        <a href="{{ route('product.store') }}" class="bg-[#cdb77f] px-8 py-3 rounded-md shadow-md text-lg font-semibold hover:scale-110 transition">Tambah Produk</a>
+        <a href="{{ route('product.create') }}" class="bg-[#cdb77f] px-8 py-3 rounded-md shadow-md text-lg font-semibold hover:scale-110 transition">Tambah Produk</a>
         <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 w-11/12">
             @foreach ($products as $product)
             <article class="bg-[#cdb77f] rounded-lg shadow-md p-6 flex flex-col items-center gap-4">
-<img src="{{ Storage::url($product->imgname) }}" alt="Product Image" class="w-40 h-40 object-cover rounded-md">
+        <img src="{{ Storage::url($product->imgname) }}" alt="Product Image" class="w-40 h-40 object-cover rounded-md">
             <div class="text-center">
                     <h2 class="text-xl font-bold">{{ $product->productname }}</h2>
                     <p>Kategori: {{ $product->formatted_category }}</p>

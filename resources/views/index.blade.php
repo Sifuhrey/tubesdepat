@@ -35,7 +35,7 @@
         <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4">
           @foreach($products as $product)
             <div class="product bg-white p-4 rounded shadow-md">
-              <img src="{{ url('storage/'.$product->imgname) }}" alt="{{ $product->productname }}" class="w-full h-48 object-contain">
+              <img src="{{ url($product->imgname) }}" alt="{{ $product->productname }}" class="w-full h-48 object-contain">
               <div class="product-desc mt-2">
                 <p class="font-bold">{{ $product->productname }}</p>
                 <p>Rp.{{ number_format($product->price, 2, ",", ".") }} /pcs</p>

@@ -18,7 +18,7 @@ class CheckUser
         
         if (!Auth::check()) {
            
-            return redirect()->route('regis')->with('error', 'You must be logged in to access this page.');
+            return redirect('login');
         }
 
         return $next($request);
